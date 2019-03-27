@@ -1,0 +1,15 @@
+identidocker:
+ build: .
+ expose:
+  - "9090"
+ enviroment:
+  ENV: PROD
+ links:
+  - dnmonster
+  - redis
+
+dnmonster:
+ images: amount/dnmonster:1.0
+
+redis:
+ image: redis:3.0
